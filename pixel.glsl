@@ -11,13 +11,10 @@ vec4 effect(vec4 color, Image tex, vec2 texture_coords, vec2 screen_coords) {
 	int screenHeight = 60;
 	int frameVectors = (screenWidth * screenHeight) / 32;
 	int scale = 10;
-	int frameCount = 7777;
-	float fps = 24.0;
 	// }
 
 	// ALL COORDINATES MUST DERIVE FROM HERE {
 	int pixelId = (int(screen_coords.x) / scale) + ((int(screen_coords.y) / scale) * screenWidth); // 0 - 4799
-	int frame = int(musicTime * fps);
 	// }
 
 	int byteId = pixelId / 8; // 0 - 599
@@ -25,7 +22,7 @@ vec4 effect(vec4 color, Image tex, vec2 texture_coords, vec2 screen_coords) {
 	int vectorId = byteId / 4; // 0 - 149
 	int vectorSubByteId = byteId - (vectorId * 4); // 0 - 3
 	// So to get a particular vector, we write...
-	vec4 targetVector = Texel(tex, vec2((float(vectorId) + 0.5) / float(frameVectors), (float(frame) + 0.5) / float(frameCount)));
+	vec4 targetVector = Texel(tex, vec2((float(vectorId) + 0.5) / float(frameVectors), musicTime));
 	// Then to get a particular byte...
 	float targetByte = 0.0;
 	if (vectorSubByteId == 0)
