@@ -3,3 +3,7 @@ video.txt
 
 # get from ry00001
 videos
+
+# prevents accidental leaks
+to1bit/tmp.bin
+to1bit/frames
