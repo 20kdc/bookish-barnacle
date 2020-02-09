@@ -8,6 +8,8 @@ expects `videos/NAME/music.ogg` (audio file for LOVE to play; duration overrides
 `videos/NAME/fps.txt` (20kdc extension to choose FPS; just has the FPS as a number)
 `video.txt` (just says "NAME" ; useful for switching videos)
 
+the program will automatically create and use `videos/NAME/video.png` (texture version of the video, perfect for messing around with)
+
 the shell scripts `convert.sh` and `play.sh` are useful utilities but are not necessary
 
 tested on (i.e. expected to be run in) LOVE 11.1 Mysterious Mysteries
